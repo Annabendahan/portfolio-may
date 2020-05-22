@@ -188,6 +188,7 @@ html {
   font: 112.5%/1.45em georgia, serif;
   box-sizing: border-box;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 * {
   box-sizing: inherit;
@@ -204,6 +205,7 @@ body {
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
+  overflow-x: hidden;
   -moz-font-feature-settings: "kern", "liga", "clig", "calt";
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
@@ -227,14 +229,18 @@ h1 {
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
-  padding-top: 0;
+  padding-top: 30px;
   margin-bottom: 1.45rem;
   color:black;
   font-family: Helvetica Neue, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   text-rendering: optimizeLegibility;
-  font-size: 5.25rem;
+  font-size: 4rem;
   line-height: 1.1;
+  @include breakpoint(s){
+    font-size: 6rem;
+    font-weight: 300;
+  }
 }
 h2 {
   margin-left: 0;
@@ -244,12 +250,12 @@ h2 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 1.2rem;
   color: black;
   font-family:  Helvetica Neue, sans-serif;
   font-weight:400;
   text-rendering: optimizeLegibility;
-  font-size: 1.2rem;
+  font-size: 2.5rem;
   line-height: 1.1;
 }
 h3 {
@@ -261,12 +267,11 @@ h3 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
+  color: black;
+  font-family:  Helvetica Neue, sans-serif;
+  font-weight: 300;
   text-rendering: optimizeLegibility;
-  font-size: 1.38316rem;
+  font-size: 3rem;
   line-height: 1.1;
 }
 h4 {
@@ -278,12 +283,11 @@ h4 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
+  color: black;
+  font-family:  Helvetica Neue, sans-serif;
+  font-weight: 500;
   text-rendering: optimizeLegibility;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.1;
 }
 h5 {
@@ -299,7 +303,7 @@ h5 {
   font-family:  Helvetica Neue, sans-serif;
   font-weight: 400;
   text-rendering: optimizeLegibility;
-  font-size: 0.85028rem;
+  font-size: 1.3rem;
   line-height: 1.1;
 }
 h6 {
@@ -311,12 +315,11 @@ h6 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
+  color: white;
+  font-family:  Helvetica Neue, sans-serif;
+  font-weight: 300;
   text-rendering: optimizeLegibility;
-  font-size: 0.78405rem;
+  font-size: 1.78405rem;
   line-height: 1.1;
 }
 hgroup {
@@ -498,7 +501,7 @@ address {
   margin-bottom: 1.45rem;
 }
 b {
-  font-weight: bold;
+  font-weight: 600;
 }
 strong {
   font-weight: bold;
@@ -623,5 +626,41 @@ pre tt:after {
 }
 
 .layout{
-  padding: 3rem;
+  padding: 1.2rem;
+  @include breakpoint(s){
+    padding: 1.2rem 3rem;
+  }
+ 
+}
+
+
+footer{
+  margin-top: 100px;
+  p{
+    font-size: .8rem;
+    margin-bottom: 0px;
+  }
+ 
+}
+.landing{
+  height: 100vh;
+  z-index: 99;
+  width: 100vw;
+  background: black;
+  position: fixed;
+  top: 0px;
+  left:0px;
+
+  &__content{
+    position: absolute;
+    top: 50vh;
+    left: 60vw;
+  }
+  &__num{
+    font-size: 4rem;
+  }
+  &__desc{
+    margin-left: 60px;
+  }
+
 }

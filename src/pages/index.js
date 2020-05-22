@@ -1,5 +1,7 @@
-import React from "react"
+import React, { Component } from "react"
 import { Link } from "gatsby"
+import { Parallax } from 'react-scroll-parallax';
+
 
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -8,87 +10,502 @@ import bcnb from "../images/bcn-billet 1.png"
 import mhilz from "../images/MHILSZ2 2.png"
 import sites from "../images/sites.png"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <div className="header"> 
-    <h5> Portfolio /20</h5> 
-    <div className="tabs">
-      <h5>Work</h5>
-      <h5>Contact</h5>
-    </div>
-    </div>
-   <h1>WELCOME</h1>
-  <div className="pres">
-    <div className="pres__name">
+class IndexPage extends Component {
+
+  state = {
+  
+    mounted: false,
+    num: false,
+    header: true,
+    count: 19283,
+    landing: true
+
+  }
+
+
+  componentDidMount = () => {
+    setInterval(
+      function () {
+        this.setState({ count: this.state.count + 1 })
+      }.bind(this),
+      200
+    )
+    setTimeout(
+      function () {
+        this.setState({ num: true})
+      }.bind(this),
+      300
+    )
+    setTimeout(
+      function () {
+        this.setState({ landing: false})
+      }.bind(this),
+      2500
+    )
+    this.setState({ mounted: true })
+    window.addEventListener("scroll", this.handleScroll)
+   
+    
+  }
+
+
+  handleScroll = event => {
+    console.log("the scroll things", event)
+    console.log(window.scrollY)
+    console.log(window.scrollY > 100)
+    if (window.scrollY > 99) {
+      this.setState({ header: false})
+    } else if (window.scrollY < 100) {
+      this.setState({ header: true})
+    }
+  }
+
+  scrollTo = (idd) => {
+    console.log("clicked", idd)
+    console.log(typeof idd)
+    var element = document.getElementById(idd)
+    element.scrollIntoView({ behavior: 'smooth'})
+  }
+
+  render(){
+    return(
+      <Layout>
+      <SEO title="Home" />
+      <div className="landing" style={{
+        transform: this.state.landing? "translateY(0vh)" : "translateY(-100vh)",
+        transition: "transform 1s cubic-bezier(0.82, 0.0, 0.28, 1.0)"
+      }}>
+        <div className="landing__content" style={{
+        transform: this.state.num? "translateX(0vh)" : "translateX(100vh)",
+        transition: "transform 1s cubic-bezier(0.82, 0.0, 0.28, 1.0)"
+      }}>
+          <h6 className="landing__num">{this.state.count}</h6>
+          <h6 className="landing__desc">lines of code</h6>
+        </div>
+      </div>
+      <div id="top" onScroll={event => this.handleScroll(event)}>
+      <div className="header" style={{
+         opacity: this.state.header? "1" : "0",
+        transition: "opacity 1s cubic-bezier(0.32, 0.0, 0.38, 1.0)"
+      }}>
+        <div className="header__content">
+        <p> Portfolio /20</p>
+        <div className="tabs">
+          <p onClick={() => this.scrollTo("work")}>Work</p>
+         <p onClick={() => this.scrollTo("about")}>About</p>
+          <p onClick={() => this.scrollTo("contact")}>Contact</p>
+        </div>
+        </div>
+      </div>
+      <div className="banner">
+      <div className="welcome"><h1>WELCOME</h1></div>
+      <div className="welcome-mobile"><h1>WEL<br/>COME</h1></div>
       
-      <h5><b>Anna Bendahan</b></h5>
-      <svg width="33" height="1" viewBox="0 0 43 1" fill="none" xmlns="http://www.w3.org/2000/svg">
-<line x1="2.18557e-08" y1="0.75" x2="43" y2="0.750004" stroke="black" stroke-width="0.5"/>
-</svg>
-      <h5>Web designer<br/>
-Creative developer</h5>
-    </div>
-    <div className="pres__text"><p>I am Anna Bendahan, a web designer & developer based in Paris. I studied business law but then I realised I wanted to work in a more creative field. So, I went to Barcelona to learn to code at le Wagon and I loved it ! 
-<br/>Now, I <i>design & build</i> websites as a freelance.  
-<b> Enjoy your visit !<svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M2 1.41935L15 14M15 14H2M15 14V1" stroke="black" stroke-width="3"/>
+      <div className="pres">
+        <div className="pres__name">
+          <p>
+            <b>Anna Bendahan</b>
+          </p>
+          <svg
+            width="33"
+            height="1"
+            viewBox="0 0 43 1"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              x1="2.18557e-08"
+              y1="0.75"
+              x2="43"
+              y2="0.750004"
+              stroke="black"
+              stroke-width="0.5"
+            />
+          </svg>
+          <p>
+            <i>Web designer</i>
+            </p>
+            <p>
+            <i>Creative developer</i>
+          </p>
+        </div>
+        <div className="pres__text">
+          <h5>
+            I am Anna Bendahan, a web designer & developer based in Paris. I
+            studied business law but then I realised I wanted to work in a more
+            creative field. So, I went to Barcelona to learn to code at le Wagon
+            and I loved it !
+            <br />
+            Now, I <i>design & build</i> websites as a freelance.
+            <b>
+              {" "}
+              Enjoy your visit !{" "}
+              <svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 14.9975L6.73684 1.73438" stroke="black" stroke-width="3"/>
+<path d="M20 1V15H6" stroke="black" stroke-width="3"/>
 </svg>
 
-</b></p> </div>
-  </div>
 
-  <div className="box">
-    <img src={bcnb} alt="mhilz" />
-    <div className="box__text">
-      <div className="box__title">
-        <h2> WHAT I DO</h2>
+
+
+            </b>
+          </h5>{" "}
+        </div>
       </div>
-      <div className="box__content">
-        <p>Web design <br/>
-Front-end development <br/>
-Interactive design <br/>
-Graphic design <br/>
-Integration </p>
       </div>
-    </div>
-  </div>
+  
+      <div className="box">
+        <div className="box__img">
+        <img src={bcnb} alt="bcnb" />
+        <p>BCN, <i>May /18</i></p>
+        </div>
+        <div id="work" className="box__text">
+          <div className="box__title">
+            <h2> WORK</h2>
+            
+          </div>
+          <div className="box__content">
+          <svg
+              width="33"
+              height="1"
+              viewBox="0 0 43 1"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="2.18557e-08"
+                y1="0.75"
+                x2="43"
+                y2="0.750004"
+                stroke="black"
+                stroke-width="0.5"
+              />
+            </svg>
+            <p>
+              I start with the <i>design</i>, which aims to be modern, intuitive &
+              responsive, then come the <i>development</i> part (front & back) and{" "}
+              <i>integration</i>.
+            </p>
+            <p>
+              <b>
+                Figma, lllustrator
+                <br />
+                React.js, Vue.js
+                <br />
+                HTML, SCSS
+              </b>{" "}
+            </p>
+          </div>
+        </div>
+      </div>
 
 
-  <div className="idid"><h2>WHAT I DID</h2></div>
+      <Parallax className="custom-class" y={[10, -10]} tagOuter="figure">
+      <div className="sites"></div> <img src={sites} alt="sites" />
+    </Parallax>
+  
+     
+  
+      <div className="projects">
+        <a href="https://alicethonnier.netlify.app/" target="blank">
+          <div className="project">
+            <div className="project__content">
+              <div className="project__left">
+                <h3>01</h3>
+              </div>
+              <div className="project__right">
+                <p>
+                  <b>Alice Thonnier</b> - Stylist
+                  <br />
+                  <i>Web design & development</i>
+                </p>
+              </div>
+            </div>
+            <svg
+              className="thinline"
+              width="100%"
+              height="1"
+              viewBox="0 0 2194 1"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="2.18557e-08"
+                y1="0.75"
+                x2="2194"
+                y2="0.750192"
+                stroke="black"
+                stroke-width="1"
+              />
+            </svg>
+  
+            <svg
+              className="heavyline"
+              width="100%"
+              height="5"
+              viewBox="0 0 2194 5"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="2.18557e-07"
+                y1="2.5"
+                x2="2194"
+                y2="2.50019"
+                stroke="black"
+                stroke-width="10"
+              />
+            </svg>
+          </div>
+        </a>
+        <a href="http://www.qm-avocat.com/" target="blank">
+          <div className="project">
+            <div className="project__content">
+              <div className="project__left">
+                <h3>02</h3>
+              </div>
+              <div className="project__right">
+                <p>
+                  <b>Quentin Mameri</b> - Lawyer
+                  <br />
+                  <i>Web design & development</i>
+                </p>
+              </div>
+            </div>
+            <svg
+              className="thinline"
+              width="100%"
+              height="1"
+              viewBox="0 0 2194 1"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="2.18557e-08"
+                y1="0.75"
+                x2="2194"
+                y2="0.750192"
+                stroke="black"
+                stroke-width="1"
+              />
+            </svg>
+  
+            <svg
+              className="heavyline"
+              width="100%"
+              height="5"
+              viewBox="0 0 2194 5"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="2.18557e-07"
+                y1="2.5"
+                x2="2194"
+                y2="2.50019"
+                stroke="black"
+                stroke-width="10"
+              />
+            </svg>
+          </div>
+        </a>
 
-  <img src={sites} alt="sites"/>
+        <a href="https://rentman.io/fr" target="blank">
+          <div className="project">
+            <div className="project__content">
+              <div className="project__left">
+                <h3>03</h3>
+              </div>
+              <div className="project__right">
+                <p>
+                  <b>Rentman</b> - Software company
+                  <br />
+                  <i>Web & print design</i>
+                </p>
+              </div>
+            </div>
+            <svg
+              className="thinline"
+              width="100%"
+              height="1"
+              viewBox="0 0 2194 1"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="2.18557e-08"
+                y1="0.75"
+                x2="2194"
+                y2="0.750192"
+                stroke="black"
+                stroke-width="1"
+              />
+            </svg>
+  
+            <svg
+              className="heavyline"
+              width="100%"
+              height="5"
+              viewBox="0 0 2194 5"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="2.18557e-07"
+                y1="2.5"
+                x2="2194"
+                y2="2.50019"
+                stroke="black"
+                stroke-width="10"
+              />
+            </svg>
+          </div>
+        </a>
+
+        <a href="https://jeskieaveclasaf.fr/" target="blank">
+          <div className="project">
+            <div className="project__content">
+              <div className="project__left">
+                <h3>04</h3>
+              </div>
+              <div className="project__right">
+                <p>
+                  <b>Asaf</b> - Air France Association 
+                  <br />
+                  <i>Web design & development</i>
+                </p>
+              </div>
+            </div>
+            <svg
+              className="thinline"
+              width="100%"
+              height="1"
+              viewBox="0 0 2194 1"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="2.18557e-08"
+                y1="0.75"
+                x2="2194"
+                y2="0.750192"
+                stroke="black"
+                stroke-width="1"
+              />
+            </svg>
+  
+            <svg
+              className="heavyline"
+              width="100%"
+              height="5"
+              viewBox="0 0 2194 5"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="2.18557e-07"
+                y1="2.5"
+                x2="2194"
+                y2="2.50019"
+                stroke="black"
+                stroke-width="10"
+              />
+            </svg>
+          </div>
+        </a>
 
 
+       
+      </div>
+  
+      <div id="about" className="foot-box">
+        <img src={mhilz} alt="terrain" />
+        <div className="foot-box__text">
+          <div className="foot-box__title">
+            {" "}
+            <h2>ABOUT</h2>
+          </div>
+          
+          <div className="foot-box__content">
+          <svg
+            width="33"
+            height="1"
+            viewBox="0 0 43 1"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              x1="2.18557e-08"
+              y1="0.75"
+              x2="43"
+              y2="0.750004"
+              stroke="black"
+              stroke-width="0.5"
+            />
+          </svg>
+            <p>
+              I play football <a href="https://www.instagram.com/usparisxifeminine/" target="blank"><u>@usparisxifeminine</u> </a> in Paris. By the way, we
+              are recruting for next year,{" "}
+              <b>
+              <a href="https://www.instagram.com/usparisxifeminine/" target="blank">join us !{" "}
+                <svg style={{
+                  marginBottom: "0px",
+                }} width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.4992 2L4.60449 12.8947" stroke="black" stroke-width="2.5"/>
+<path d="M4 2H15.5V13.5" stroke="black" stroke-width="2.5"/>
+</svg></a>
 
-  <div className="foot-box">
-    <img src={mhilz} alt="terrain"/>
-    <div className="foot-box__text">
-    <div className="foot-box__title"> <h2>WHAT ELSE</h2></div>
-    <div className="foot-box__content"><p>I play football <u>@usparisxifeminine</u> in Paris. By the way, we are recruting for next year, <b>join us ! <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1.30625 10.0599L10.0703 1.99936M10.0703 1.99936L10.0836 10.0403M10.0703 1.99936L1.00038 2.01957" stroke="black" stroke-width="2"/>
+              </b>
+            </p>{" "}
+          </div>
+        </div>
+      </div>
+  
+      <div id="contact" className="contact">
+        <h2> CONTACT</h2>
+        <svg
+          width="33"
+          height="1"
+          viewBox="0 0 43 1"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="2.18557e-08"
+            y1="0.75"
+            x2="43"
+            y2="0.750004"
+            stroke="black"
+            stroke-width="0.5"
+          />
+        </svg>
+  
+        <div className="contact__content">
+          <p>You have a <i>project</i> in mind? Feel free to contact me ! </p>{" "}
+          <p>
+            <b>an.bendahan@gmail.com </b>
+            <br />
+            <b>@lebendan</b>
+            <br />
+            <b>0659133919</b>
+          </p>
+        </div>
+      </div>
+     
+
+      <div onClick={() => this.scrollTo("top")} className="scroll-top"> <h4>SCROLL TO TOP <svg width="34" height="23" viewBox="0 0 34 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M26.3502 2.59766L7.8291 21.1187" stroke="black" stroke-width="4"/>
+<path d="M6.80078 2.59766H26.3508V22.1477" stroke="black" stroke-width="4"/>
 </svg>
-</b></p> </div>
-    </div>
-  </div>
 
+</h4></div>
+      </div>
+    </Layout>
 
-  <div className="contact">
-    <h1> CONTACT</h1>
+    )
+  }
+}
+ 
 
-
-  <svg width="53" height="1" viewBox="0 0 53 1" fill="none" xmlns="http://www.w3.org/2000/svg">
-<line x1="2.18557e-08" y1="0.75" x2="53" y2="0.750004" stroke="black" stroke-width="0.5"/>
-</svg>
-
-
-<div className="contact__content">
-  <p>You have a project in mind? 
-Feel free to contact me !  </p> <p>an.bendahan@gmail.com <br/>@lebendan<br/>0659133919</p></div>
-
-
-</div>
-  </Layout>
-)
 
 export default IndexPage

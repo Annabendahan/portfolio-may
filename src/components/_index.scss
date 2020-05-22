@@ -1,21 +1,86 @@
 .header{
-    display: flex;
-    justify-content: space-between;
+    
+    position: fixed;
+    
+    &__content{
+        display: flex;
+        justify-content: space-between;
+        width: 92vw;
+        
+    }
+    
 }
 
+
+.banner{
+    @include breakpoint(m){
+        height: 98vh;
+        padding-top: 14vh;
+    }
+   
+    padding-top: 10vh;
+}
+
+.welcome{
+    display: none;
+@include breakpoint(s){
+    display: block;
+}
+}
+
+.welcome-mobile{
+    display:block;
+@include breakpoint(s){
+    display: none;
+}
+}
+
+
+
 .tabs{
-    display: flex;
-    justify-content: space-between;
-    
+    display: none;
+    @include breakpoint(s){
+        display: flex;
+        justify-content: space-between;
+    }
+    p{
+        margin: 0px 10px;
+        &:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
 }
 
 .pres{
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
+   
+    display: block;
+    @include breakpoint(s){
+        margin: 100px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      
+    }
+    @include breakpoint(xl){
+        
+        width: 80%;
+    }
+
+    p{
+        margin-bottom: 10px;
+    }
     
     &__name{
-        flex: 0 0 65%;
+        flex: 0 0 55%;
+        text-align: right;
+        margin-bottom: 50px;
+        p{
+            margin-bottom: -5px;
+        }
+        @include breakpoint(s)
+        { text-align: left;
+            margin-bottom: 0px;}
     }
     &__text{
        
@@ -23,51 +88,184 @@
 }
 
 .box{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    img{
-        width: 25vw;
+    display: block;
+ 
+    @include breakpoint(s){
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__img{
+        margin: 80px 0px;
+       
+        text-align: right;
+        @include breakpoint(s){
+            width: 25vw;
+            margin: 0px;
+        }
+        img{
+            
+            margin-bottom: 0px;
+        }
+        
+        p{
+            font-size: .8rem;
+        }
     }
     &__title{
-        h2{
-            margin-bottom: 5px;
-        }
+        
+       
         width: 40vw;
-        border-bottom: 0.5px solid black;
+       
+    }
+    &__text{
+        margin-left: 20vw;
+        @include breakpoint(s){
+            
+            margin-left: 0px;
+        }
+
     }
     &__content{
-        max-width: 30vw;
-        margin-top: 30px;
+       
+        @include breakpoint(s){
+            max-width: 30vw;
+           
+        }
+        
+       
+    }
+    svg{
+        margin-bottom: 10px;
     }
 }
 
 
 
-.idid{
-    width: 40vw;
-    text-align: right;
-    border-bottom: .5px solid black;
+.sites{
+    margin: 100px 0px;
 }
 
 
 .foot-box{
+    
+    margin: 100px 0px;
+    
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    flex-direction: column-reverse;
+    
+    @include breakpoint(s){
+        margin-left: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
     img{
         width: 50vw;
-    }
-    &__title{
-        
-        width: 40vw;
-        border-bottom: 0.5px solid black;
-        h2{
-            margin-bottom: 5px;
-        }
-    }
-    &__content{
-        max-width: 30vw;
         margin-top: 30px;
     }
+    }
+   &__text{
+    margin-left: 20vw;
+    @include breakpoint(s){
+        margin-left: 0px;
+    }
+  
+   }
+   
+    &__title{
+        @include breakpoint(s){
+        width: 40vw;
+    }
+       
+    }
+    &__content{
+       
+        
+        @include breakpoint(s){
+            max-width: 30vw;
+           
+        }
+    }
+    svg{
+        margin-bottom: 10px;
+    }
+
+    a{
+        color: black;
+    }
+}
+
+.projects{
+    @include breakpoint(s){
+        margin: 100px 0px;
+       
+    }
+  
+}
+
+.project{
+    position: relative;
+    padding-top: 60px;
+    h3{
+        margin-bottom: 10px;
+    }
+    p{
+        margin-bottom: 10px;
+    }
+
+    &__content{
+        display: flex;
+        justify-content: space-between;
+    }
+   &__right{
+       text-align: right;
+   }
+   .heavyline{
+       display: none;
+       position: absolute;
+       bottom: 0px;
+   }
+   .thinline{
+       position: absolute;
+       bottom: 0px;
+}
+
+   &:hover > .heavyline{
+       display: block;
+   }
+   &:hover > .thinline{
+    display: none;
+
+}
+}
+
+
+   
+a{ text-decoration: none;}
+
+
+.contact{
+    margin-left: 20vw;
+    @include breakpoint(s){
+        margin-left: 40vw;
+    }
+    svg{
+        margin-bottom: 10px;
+    }
+}
+
+
+.scroll-top{
+    margin-top: 150px;
+    &:hover{
+        cursor:pointer;
+    }
+    &:hover svg{
+      transform: translateY(-5px);
+      transition: transform  .5s ease-out;
+    }
+
 }
