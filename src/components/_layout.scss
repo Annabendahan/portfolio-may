@@ -189,6 +189,7 @@ html {
   box-sizing: border-box;
   overflow-y: scroll;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 * {
   box-sizing: inherit;
@@ -238,7 +239,11 @@ h1 {
   font-size: 4rem;
   line-height: 1.1;
   @include breakpoint(s){
-    font-size: 6rem;
+    font-size: 7rem;
+    font-weight: 300;
+  }
+  @include breakpoint(xxl){
+    font-size: 11rem;
     font-weight: 300;
   }
 }
@@ -257,6 +262,12 @@ h2 {
   text-rendering: optimizeLegibility;
   font-size: 2.5rem;
   line-height: 1.1;
+  @include breakpoint(l){
+    font-size: 3.5rem;
+  }
+  @include breakpoint(xxl){
+    font-size: 5rem;
+  }
 }
 h3 {
   margin-left: 0;
@@ -273,6 +284,9 @@ h3 {
   text-rendering: optimizeLegibility;
   font-size: 3rem;
   line-height: 1.1;
+  @include breakpoint(xxl){
+    font-size: 4rem;
+  }
 }
 h4 {
   margin-left: 0;
@@ -289,6 +303,9 @@ h4 {
   text-rendering: optimizeLegibility;
   font-size: 1.5rem;
   line-height: 1.1;
+  @include breakpoint(xxl){
+    font-size: 3rem;
+  }
 }
 h5 {
   margin-left: 0;
@@ -305,6 +322,12 @@ h5 {
   text-rendering: optimizeLegibility;
   font-size: 1.3rem;
   line-height: 1.1;
+  @include breakpoint(l){
+    font-size: 1.5rem;
+  }
+  @include breakpoint(xxl){
+    font-size: 2.3rem;
+  }
 }
 h6 {
   margin-left: 0;
@@ -389,6 +412,10 @@ p {
   font-size: 1rem;
   color: black;
   font-family:  Helvetica Neue, sans-serif;
+  @include breakpoint(xxl){
+    font-size: 1.7rem;
+    line-height: 1.2;
+  }
 }
 figure {
   margin-left: 0;
@@ -630,6 +657,9 @@ pre tt:after {
   @include breakpoint(s){
     padding: 1.2rem 3rem;
   }
+  @include breakpoint(xxl){
+    padding: 3em 7rem;
+  }
  
 }
 
@@ -658,6 +688,9 @@ footer{
   }
   &__num{
     font-size: 4rem;
+    @include breakpoint(xxl){
+      font-size: 7rem;
+    }
   }
   &__desc{
     margin-left: 60px;

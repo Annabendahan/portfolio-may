@@ -13,12 +13,17 @@
 
 
 .banner{
+    
+   
+    padding-top: 10vh;
     @include breakpoint(m){
         height: 98vh;
         padding-top: 14vh;
     }
-   
-    padding-top: 10vh;
+    @include breakpoint(xxl){
+       
+        padding-top: 20vh;
+    }
 }
 
 .welcome{
@@ -63,6 +68,10 @@
       
     }
     @include breakpoint(xl){
+        
+        width: 90%;
+    }
+    @include breakpoint(xxl){
         
         width: 80%;
     }
@@ -144,6 +153,10 @@
 
 .sites{
     margin: 100px 0px;
+    img{
+        width: 100vw;
+    }
+
 }
 
 
@@ -164,7 +177,10 @@
     flex-direction: row;
     img{
         width: 50vw;
-        margin-top: 30px;
+        margin-top: 50px;
+    }
+    @include breakpoint(l){
+        margin: 200px 0px 100px 0px;
     }
     }
    &__text{

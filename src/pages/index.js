@@ -16,6 +16,7 @@ class IndexPage extends Component {
   
     mounted: false,
     num: false,
+    phrase: false,
     header: true,
     count: 19283,
     landing: true
@@ -24,6 +25,8 @@ class IndexPage extends Component {
 
 
   componentDidMount = () => {
+    var element = document.getElementById("top")
+    element.scrollIntoView({ behavior: 'smooth'})
     setInterval(
       function () {
         this.setState({ count: this.state.count + 1 })
@@ -35,6 +38,12 @@ class IndexPage extends Component {
         this.setState({ num: true})
       }.bind(this),
       300
+    )
+    setTimeout(
+      function () {
+        this.setState({ phrase: true})
+      }.bind(this),
+      1300
     )
     setTimeout(
       function () {
@@ -69,7 +78,7 @@ class IndexPage extends Component {
 
   render(){
     return(
-      <Layout>
+      <Layout >
       <SEO title="Home" />
       <div className="landing" style={{
         transform: this.state.landing? "translateY(0vh)" : "translateY(-100vh)",
@@ -80,10 +89,13 @@ class IndexPage extends Component {
         transition: "transform 1s cubic-bezier(0.82, 0.0, 0.28, 1.0)"
       }}>
           <h6 className="landing__num">{this.state.count}</h6>
-          <h6 className="landing__desc">lines of code</h6>
+          <h6 className="landing__desc" style={{
+        opacity: this.state.phrase? "1" : "0",
+        transition: "opacity 2s ease-out"
+      }}>lines of code</h6>
         </div>
       </div>
-      <div id="top" onScroll={event => this.handleScroll(event)}>
+      <div id="top"  onScroll={event => this.handleScroll(event)}>
       <div className="header" style={{
          opacity: this.state.header? "1" : "0",
         transition: "opacity 1s cubic-bezier(0.32, 0.0, 0.38, 1.0)"
@@ -201,7 +213,9 @@ class IndexPage extends Component {
 
 
       <Parallax className="custom-class" y={[10, -10]} tagOuter="figure">
-      <div className="sites"></div> <img src={sites} alt="sites" />
+      <div className="sites"> <img style={{
+        width: '100vw'
+      }} src={sites} alt="sites" /></div>
     </Parallax>
   
      
@@ -225,14 +239,14 @@ class IndexPage extends Component {
               className="thinline"
               width="100%"
               height="1"
-              viewBox="0 0 2194 1"
+              viewBox="0 0 3194 1"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <line
                 x1="2.18557e-08"
                 y1="0.75"
-                x2="2194"
+                x2="3194"
                 y2="0.750192"
                 stroke="black"
                 stroke-width="1"
@@ -243,14 +257,14 @@ class IndexPage extends Component {
               className="heavyline"
               width="100%"
               height="5"
-              viewBox="0 0 2194 5"
+              viewBox="0 0 3194 5"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <line
                 x1="2.18557e-07"
                 y1="2.5"
-                x2="2194"
+                x2="3194"
                 y2="2.50019"
                 stroke="black"
                 stroke-width="10"
@@ -276,14 +290,14 @@ class IndexPage extends Component {
               className="thinline"
               width="100%"
               height="1"
-              viewBox="0 0 2194 1"
+              viewBox="0 0 3194 1"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <line
                 x1="2.18557e-08"
                 y1="0.75"
-                x2="2194"
+                x2="3194"
                 y2="0.750192"
                 stroke="black"
                 stroke-width="1"
@@ -294,14 +308,14 @@ class IndexPage extends Component {
               className="heavyline"
               width="100%"
               height="5"
-              viewBox="0 0 2194 5"
+              viewBox="0 0 3194 5"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <line
                 x1="2.18557e-07"
                 y1="2.5"
-                x2="2194"
+                x2="3194"
                 y2="2.50019"
                 stroke="black"
                 stroke-width="10"
@@ -328,14 +342,14 @@ class IndexPage extends Component {
               className="thinline"
               width="100%"
               height="1"
-              viewBox="0 0 2194 1"
+              viewBox="0 0 3194 1"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <line
                 x1="2.18557e-08"
                 y1="0.75"
-                x2="2194"
+                x2="3194"
                 y2="0.750192"
                 stroke="black"
                 stroke-width="1"
@@ -346,14 +360,14 @@ class IndexPage extends Component {
               className="heavyline"
               width="100%"
               height="5"
-              viewBox="0 0 2194 5"
+              viewBox="0 0 3194 5"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <line
                 x1="2.18557e-07"
                 y1="2.5"
-                x2="2194"
+                x2="3194"
                 y2="2.50019"
                 stroke="black"
                 stroke-width="10"
@@ -380,14 +394,14 @@ class IndexPage extends Component {
               className="thinline"
               width="100%"
               height="1"
-              viewBox="0 0 2194 1"
+              viewBox="0 0 3194 1"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <line
                 x1="2.18557e-08"
                 y1="0.75"
-                x2="2194"
+                x2="3194"
                 y2="0.750192"
                 stroke="black"
                 stroke-width="1"
@@ -398,14 +412,14 @@ class IndexPage extends Component {
               className="heavyline"
               width="100%"
               height="5"
-              viewBox="0 0 2194 5"
+              viewBox="0 0 3194 5"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <line
                 x1="2.18557e-07"
                 y1="2.5"
-                x2="2194"
+                x2="3194"
                 y2="2.50019"
                 stroke="black"
                 stroke-width="10"
@@ -444,7 +458,7 @@ class IndexPage extends Component {
             />
           </svg>
             <p>
-              I play football <a href="https://www.instagram.com/usparisxifeminine/" target="blank"><u>@usparisxifeminine</u> </a> in Paris. By the way, we
+              Apart from coding, I play football <a href="https://www.instagram.com/usparisxifeminine/" target="blank"><u>@usparisxifeminine</u> </a> in Paris. By the way, we
               are recruting for next year,{" "}
               <b>
               <a href="https://www.instagram.com/usparisxifeminine/" target="blank">join us !{" "}
