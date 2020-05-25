@@ -151,11 +151,17 @@ class IndexPage extends Component {
             Now, I <i>design & build</i> websites as a freelance.
             <b>
               {" "}
-              Enjoy your visit !{" "}
-              <svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <span className="enjoy" onClick={() => this.scrollTo("billet")}>  Enjoy your visit !{" "}
+             
+              <svg className="smallarrowdown" width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M20 14.9975L6.73684 1.73438" stroke="black" stroke-width="3"/>
 <path d="M20 1V15H6" stroke="black" stroke-width="3"/>
 </svg>
+<svg className="bigarrowdown" width="46" height="28" viewBox="0 0 46 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M32.8555 23.8657L11.066 2.19531" stroke="black" stroke-width="5"/>
+<path d="M32.8564 1V23.8743H9.85644" stroke="black" stroke-width="5"/>
+</svg>
+</span>
 
 
 
@@ -166,7 +172,7 @@ class IndexPage extends Component {
       </div>
       </div>
   
-      <div className="box">
+      <div id="billet" className="box">
         <div className="box__img">
         <img src={bcnb} alt="bcnb" />
         <p>BCN, <i>May /18</i></p>
@@ -468,12 +474,12 @@ class IndexPage extends Component {
           </svg>
             <p>
               Apart from coding, I play football <a href="https://www.instagram.com/usparisxifeminine/" target="blank"><u>@usparisxifeminine</u> </a> in Paris. By the way, we
-              are recruting for next year,{" "}
+              are recruiting for next year,{" "}
               <b>
-              <a href="https://www.instagram.com/usparisxifeminine/" target="blank">join us !{" "}
+              <a className="join" href="https://www.instagram.com/usparisxifeminine/" target="blank">join us !{" "}
                 <svg style={{
                   marginBottom: "0px",
-                }} width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                }} className="arrowdownjoin" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M15.4992 2L4.60449 12.8947" stroke="black" stroke-width="2.5"/>
 <path d="M4 2H15.5V13.5" stroke="black" stroke-width="2.5"/>
 </svg></a>
@@ -516,10 +522,17 @@ class IndexPage extends Component {
       </div>
      
 
-      <div onClick={() => this.scrollTo("top")} className="scroll-top"> <h4>SCROLL TO TOP <svg width="34" height="23" viewBox="0 0 34 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div onClick={() => this.scrollTo("top")} className="scroll-top"> <h4>SCROLL TO TOP <svg className="smallarrowup" width="34" height="23" viewBox="0 0 34 23" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M26.3502 2.59766L7.8291 21.1187" stroke="black" stroke-width="4"/>
 <path d="M6.80078 2.59766H26.3508V22.1477" stroke="black" stroke-width="4"/>
 </svg>
+
+<svg className="bigarrowup"  width="58" height="34" viewBox="0 0 58 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M46.4662 3.53906L18.7266 31.2787" stroke="black" stroke-width="6"/>
+<path d="M17.1865 3.53906H46.4673V32.8198" stroke="black" stroke-width="6"/>
+</svg>
+
+
 
 </h4></div>
       </div>
