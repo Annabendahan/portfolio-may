@@ -285,3 +285,13 @@ a{ text-decoration: none;}
     }
 
 }
+
+
+.arrowdown{
+    margin-top: 60px;
+    text-align: center;
+    @include breakpoint(m){
+       
+        text-align: left;
+    }
+}

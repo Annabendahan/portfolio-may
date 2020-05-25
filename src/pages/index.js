@@ -431,7 +431,16 @@ class IndexPage extends Component {
 
        
       </div>
-  
+
+      <div className="arrowdown">
+
+      <svg width="92" height="126" viewBox="0 0 92 126" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 81L48 121L89 81" stroke="black" stroke-width="7"/>
+<path d="M48 118V0" stroke="black" stroke-width="7"/>
+</svg>
+
+</div>
+
       <div id="about" className="foot-box">
         <img src={mhilz} alt="terrain" />
         <div className="foot-box__text">
