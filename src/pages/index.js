@@ -258,11 +258,117 @@ class IndexPage extends Component {
             </svg>
           </div>
         </a>
-        <a href="http://www.qm-avocat.com/" target="blank">
+
+        <a href="https://majortheory.com/" target="blank">
           <div className="project">
             <div className="project__content">
               <div className="project__left">
                 <h3>02</h3>
+              </div>
+              <div className="project__right">
+                <p>
+                  <b>Major Theory</b> - Music agency
+                  <br />
+                  <i>Front-end & integration</i>
+                </p>
+              </div>
+            </div>
+            <svg
+              className="thinline"
+              width="100%"
+              height="1"
+              viewBox="0 0 2194 1"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="2.18557e-08"
+                y1="0.75"
+                x2="2194"
+                y2="0.750192"
+                stroke="black"
+                stroke-width="1"
+              />
+            </svg>
+  
+            <svg
+              className="heavyline"
+              width="100%"
+              height="5"
+              viewBox="0 0 2194 5"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="2.18557e-07"
+                y1="2.5"
+                x2="2194"
+                y2="2.50019"
+                stroke="black"
+                stroke-width="10"
+              />
+            </svg>
+          </div>
+        </a>
+
+        <a href="https://www.riot-esports.fr/" target="blank">
+          <div className="project">
+            <div className="project__content">
+              <div className="project__left">
+                <h3>03</h3>
+              </div>
+              <div className="project__right">
+                <p>
+                  <b>Riot e-sport</b> 
+                  <br />
+                  <i>Front-end & integration</i>
+                </p>
+              </div>
+            </div>
+            <svg
+              className="thinline"
+              width="100%"
+              height="1"
+              viewBox="0 0 2194 1"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="2.18557e-08"
+                y1="0.75"
+                x2="2194"
+                y2="0.750192"
+                stroke="black"
+                stroke-width="1"
+              />
+            </svg>
+  
+            <svg
+              className="heavyline"
+              width="100%"
+              height="5"
+              viewBox="0 0 2194 5"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="2.18557e-07"
+                y1="2.5"
+                x2="2194"
+                y2="2.50019"
+                stroke="black"
+                stroke-width="10"
+              />
+            </svg>
+          </div>
+        </a>
+
+
+        <a href="http://www.qm-avocat.com/" target="blank">
+          <div className="project">
+            <div className="project__content">
+              <div className="project__left">
+                <h3>04</h3>
               </div>
               <div className="project__right">
                 <p>
@@ -314,7 +420,7 @@ class IndexPage extends Component {
           <div className="project">
             <div className="project__content">
               <div className="project__left">
-                <h3>03</h3>
+                <h3>05</h3>
               </div>
               <div className="project__right">
                 <p>
@@ -366,7 +472,7 @@ class IndexPage extends Component {
           <div className="project">
             <div className="project__content">
               <div className="project__left">
-                <h3>04</h3>
+                <h3>06</h3>
               </div>
               <div className="project__right">
                 <p>
