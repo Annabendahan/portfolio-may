@@ -16,6 +16,7 @@ class IndexPage extends Component {
   
     mounted: false,
     num: false,
+    phrase: false,
     header: true,
     count: 19283,
     landing: true
@@ -24,6 +25,8 @@ class IndexPage extends Component {
 
 
   componentDidMount = () => {
+    var element = document.getElementById("top")
+    element.scrollIntoView({ behavior: 'smooth'})
     setInterval(
       function () {
         this.setState({ count: this.state.count + 1 })
@@ -35,6 +38,12 @@ class IndexPage extends Component {
         this.setState({ num: true})
       }.bind(this),
       300
+    )
+    setTimeout(
+      function () {
+        this.setState({ phrase: true})
+      }.bind(this),
+      1300
     )
     setTimeout(
       function () {
@@ -69,7 +78,7 @@ class IndexPage extends Component {
 
   render(){
     return(
-      <Layout>
+      <Layout >
       <SEO title="Home" />
       <div className="landing" style={{
         transform: this.state.landing? "translateY(0vh)" : "translateY(-100vh)",
@@ -80,10 +89,13 @@ class IndexPage extends Component {
         transition: "transform 1s cubic-bezier(0.82, 0.0, 0.28, 1.0)"
       }}>
           <h6 className="landing__num">{this.state.count}</h6>
-          <h6 className="landing__desc">lines of code</h6>
+          <h6 className="landing__desc" style={{
+        opacity: this.state.phrase? "1" : "0",
+        transition: "opacity 2s ease-out"
+      }}>lines of code</h6>
         </div>
       </div>
-      <div id="top" onScroll={event => this.handleScroll(event)}>
+      <div id="top"  onScroll={event => this.handleScroll(event)}>
       <div className="header" style={{
          opacity: this.state.header? "1" : "0",
         transition: "opacity 1s cubic-bezier(0.32, 0.0, 0.38, 1.0)"
@@ -139,11 +151,17 @@ class IndexPage extends Component {
             Now, I <i>design & build</i> websites as a freelance.
             <b>
               {" "}
-              Enjoy your visit !{" "}
-              <svg width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <span className="enjoy" onClick={() => this.scrollTo("billet")}>  Enjoy your visit !{" "}
+             
+              <svg className="smallarrowdown" width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M20 14.9975L6.73684 1.73438" stroke="black" stroke-width="3"/>
 <path d="M20 1V15H6" stroke="black" stroke-width="3"/>
 </svg>
+<svg className="bigarrowdown" width="46" height="28" viewBox="0 0 46 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M32.8555 23.8657L11.066 2.19531" stroke="black" stroke-width="5"/>
+<path d="M32.8564 1V23.8743H9.85644" stroke="black" stroke-width="5"/>
+</svg>
+</span>
 
 
 
@@ -154,7 +172,7 @@ class IndexPage extends Component {
       </div>
       </div>
   
-      <div className="box">
+      <div id="billet" className="box">
         <div className="box__img">
         <img src={bcnb} alt="bcnb" />
         <p>BCN, <i>May /18</i></p>
@@ -201,7 +219,9 @@ class IndexPage extends Component {
 
 
       <Parallax className="custom-class" y={[10, -10]} tagOuter="figure">
-      <div className="sites"></div> <img src={sites} alt="sites" />
+      <div className="sites"> <img style={{
+        width: '100vw'
+      }} src={sites} alt="sites" /></div>
     </Parallax>
   
      
@@ -225,14 +245,14 @@ class IndexPage extends Component {
               className="thinline"
               width="100%"
               height="1"
-              viewBox="0 0 2194 1"
+              viewBox="0 0 3194 1"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <line
                 x1="2.18557e-08"
                 y1="0.75"
-                x2="2194"
+                x2="3194"
                 y2="0.750192"
                 stroke="black"
                 stroke-width="1"
@@ -243,14 +263,14 @@ class IndexPage extends Component {
               className="heavyline"
               width="100%"
               height="5"
-              viewBox="0 0 2194 5"
+              viewBox="0 0 3194 5"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <line
                 x1="2.18557e-07"
                 y1="2.5"
-                x2="2194"
+                x2="3194"
                 y2="2.50019"
                 stroke="black"
                 stroke-width="10"
@@ -382,14 +402,14 @@ class IndexPage extends Component {
               className="thinline"
               width="100%"
               height="1"
-              viewBox="0 0 2194 1"
+              viewBox="0 0 3194 1"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <line
                 x1="2.18557e-08"
                 y1="0.75"
-                x2="2194"
+                x2="3194"
                 y2="0.750192"
                 stroke="black"
                 stroke-width="1"
@@ -400,14 +420,14 @@ class IndexPage extends Component {
               className="heavyline"
               width="100%"
               height="5"
-              viewBox="0 0 2194 5"
+              viewBox="0 0 3194 5"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <line
                 x1="2.18557e-07"
                 y1="2.5"
-                x2="2194"
+                x2="3194"
                 y2="2.50019"
                 stroke="black"
                 stroke-width="10"
@@ -434,14 +454,14 @@ class IndexPage extends Component {
               className="thinline"
               width="100%"
               height="1"
-              viewBox="0 0 2194 1"
+              viewBox="0 0 3194 1"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <line
                 x1="2.18557e-08"
                 y1="0.75"
-                x2="2194"
+                x2="3194"
                 y2="0.750192"
                 stroke="black"
                 stroke-width="1"
@@ -452,14 +472,14 @@ class IndexPage extends Component {
               className="heavyline"
               width="100%"
               height="5"
-              viewBox="0 0 2194 5"
+              viewBox="0 0 3194 5"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <line
                 x1="2.18557e-07"
                 y1="2.5"
-                x2="2194"
+                x2="3194"
                 y2="2.50019"
                 stroke="black"
                 stroke-width="10"
@@ -486,14 +506,14 @@ class IndexPage extends Component {
               className="thinline"
               width="100%"
               height="1"
-              viewBox="0 0 2194 1"
+              viewBox="0 0 3194 1"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <line
                 x1="2.18557e-08"
                 y1="0.75"
-                x2="2194"
+                x2="3194"
                 y2="0.750192"
                 stroke="black"
                 stroke-width="1"
@@ -504,14 +524,14 @@ class IndexPage extends Component {
               className="heavyline"
               width="100%"
               height="5"
-              viewBox="0 0 2194 5"
+              viewBox="0 0 3194 5"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <line
                 x1="2.18557e-07"
                 y1="2.5"
-                x2="2194"
+                x2="3194"
                 y2="2.50019"
                 stroke="black"
                 stroke-width="10"
@@ -523,7 +543,16 @@ class IndexPage extends Component {
 
        
       </div>
-  
+
+      <div className="arrowdown">
+
+      <svg width="92" height="126" viewBox="0 0 92 126" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 81L48 121L89 81" stroke="black" stroke-width="7"/>
+<path d="M48 118V0" stroke="black" stroke-width="7"/>
+</svg>
+
+</div>
+
       <div id="about" className="foot-box">
         <img src={mhilz} alt="terrain" />
         <div className="foot-box__text">
@@ -550,13 +579,13 @@ class IndexPage extends Component {
             />
           </svg>
             <p>
-              I play football <a href="https://www.instagram.com/usparisxifeminine/" target="blank"><u>@usparisxifeminine</u> </a> in Paris. By the way, we
-              are recruting for next year,{" "}
+              Apart from coding, I play football <a href="https://www.instagram.com/usparisxifeminine/" target="blank"><u>@usparisxifeminine</u> </a> in Paris. By the way, we
+              are recruiting for next year,{" "}
               <b>
-              <a href="https://www.instagram.com/usparisxifeminine/" target="blank">join us !{" "}
+              <a className="join" href="https://www.instagram.com/usparisxifeminine/" target="blank">join us !{" "}
                 <svg style={{
                   marginBottom: "0px",
-                }} width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                }} className="arrowdownjoin" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M15.4992 2L4.60449 12.8947" stroke="black" stroke-width="2.5"/>
 <path d="M4 2H15.5V13.5" stroke="black" stroke-width="2.5"/>
 </svg></a>
@@ -599,10 +628,17 @@ class IndexPage extends Component {
       </div>
      
 
-      <div onClick={() => this.scrollTo("top")} className="scroll-top"> <h4>SCROLL TO TOP <svg width="34" height="23" viewBox="0 0 34 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div onClick={() => this.scrollTo("top")} className="scroll-top"> <h4>SCROLL TO TOP <svg className="smallarrowup" width="34" height="23" viewBox="0 0 34 23" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M26.3502 2.59766L7.8291 21.1187" stroke="black" stroke-width="4"/>
 <path d="M6.80078 2.59766H26.3508V22.1477" stroke="black" stroke-width="4"/>
 </svg>
+
+<svg className="bigarrowup"  width="58" height="34" viewBox="0 0 58 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M46.4662 3.53906L18.7266 31.2787" stroke="black" stroke-width="6"/>
+<path d="M17.1865 3.53906H46.4673V32.8198" stroke="black" stroke-width="6"/>
+</svg>
+
+
 
 </h4></div>
       </div>

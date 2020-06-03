@@ -13,12 +13,17 @@
 
 
 .banner{
+    
+   
+    padding-top: 10vh;
     @include breakpoint(m){
         height: 98vh;
         padding-top: 14vh;
     }
-   
-    padding-top: 10vh;
+    @include breakpoint(xxl){
+       
+        padding-top: 20vh;
+    }
 }
 
 .welcome{
@@ -64,6 +69,10 @@
     }
     @include breakpoint(xl){
         
+        width: 90%;
+    }
+    @include breakpoint(xxl){
+        
         width: 80%;
     }
 
@@ -86,6 +95,40 @@
        
     }
 }
+
+
+.enjoy{
+    display: flex;
+    align-items: center;
+    &:hover{
+        cursor: pointer;
+    }
+    &:hover > svg{
+        transform: translateY(5px);
+        transition: transform  .5s ease-out;
+    }
+}
+
+
+
+.bigarrowdown{
+   
+    display: none;
+    @include breakpoint(xxl){
+        display: block;
+    }
+}
+
+.smallarrowdown{
+
+    display: block;
+    @include breakpoint(xxl){
+        display: none
+    }
+}
+
+
+
 
 .box{
     display: block;
@@ -144,6 +187,10 @@
 
 .sites{
     margin: 100px 0px;
+    img{
+        width: 100vw;
+    }
+
 }
 
 
@@ -164,7 +211,10 @@
     flex-direction: row;
     img{
         width: 50vw;
-        margin-top: 30px;
+        margin-top: 50px;
+    }
+    @include breakpoint(l){
+        margin: 200px 0px 100px 0px;
     }
     }
    &__text{
@@ -195,6 +245,14 @@
 
     a{
         color: black;
+    }
+}
+
+.join {
+    &:hover > .arrowdownjoin {
+        transform: translateY(-5px);
+      transition: transform  .5s ease-out;
+
     }
 }
 
@@ -259,7 +317,12 @@ a{ text-decoration: none;}
 
 
 .scroll-top{
+    h4{
+        display: flex;
+        align-items: center;
+    }
     margin-top: 150px;
+   
     &:hover{
         cursor:pointer;
     }
@@ -268,4 +331,31 @@ a{ text-decoration: none;}
       transition: transform  .5s ease-out;
     }
 
+}
+
+.bigarrowup{
+   
+    display: none;
+    @include breakpoint(xxl){
+        display: block;
+    }
+}
+
+.smallarrowup{
+
+    display: block;
+    @include breakpoint(xxl){
+        display: none
+    }
+}
+
+
+
+.arrowdown{
+    margin-top: 60px;
+    text-align: center;
+    @include breakpoint(m){
+       
+        text-align: left;
+    }
 }
