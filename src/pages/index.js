@@ -201,7 +201,7 @@ class IndexPage extends Component {
             </svg>
             <p>
               I start with the <i>design</i>, which aims to be modern, intuitive &
-              responsive, then come the <i>development</i> part (front & back) and{" "}
+              responsive, then comes the <i>development</i> part (front & back) and{" "}
               <i>integration</i>.
             </p>
             <p>
@@ -622,7 +622,7 @@ class IndexPage extends Component {
             <br />
             <b>@lebendan</b>
             <br />
-            <b>0659133919</b>
+            <b>+33 659133919</b>
           </p>
         </div>
       </div>
