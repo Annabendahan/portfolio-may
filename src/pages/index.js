@@ -1,10 +1,8 @@
 import React, { Component } from "react"
-import { Link } from "gatsby"
 import { Parallax } from 'react-scroll-parallax';
 
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import bcnb from "../images/bcn-billet 1.png"
 import mhilz from "../images/MHILSZ2 2.png"
@@ -59,9 +57,7 @@ class IndexPage extends Component {
 
 
   handleScroll = event => {
-    console.log("the scroll things", event)
-    console.log(window.scrollY)
-    console.log(window.scrollY > 100)
+   
     if (window.scrollY > 99) {
       this.setState({ header: false})
     } else if (window.scrollY < 100) {
@@ -70,8 +66,7 @@ class IndexPage extends Component {
   }
 
   scrollTo = (idd) => {
-    console.log("clicked", idd)
-    console.log(typeof idd)
+    
     var element = document.getElementById(idd)
     element.scrollIntoView({ behavior: 'smooth'})
   }
