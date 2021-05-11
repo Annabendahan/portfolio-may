@@ -76,18 +76,18 @@ class IndexPage extends Component {
       <Layout >
         <SEO title="Home" />
         <div className="landing" style={{
-          transform: this.state.landing ? "translateY(0vh)" : "translateY(-100vh)",
+          transform: this.state.landing ? "translateY(0vh)" : "translateY(-150vh)",
           transition: "transform 1s cubic-bezier(0.82, 0.0, 0.28, 1.0)"
         }}>
           <div className="landing__content" style={{
             transform: this.state.num ? "translateX(0vh)" : "translateX(100vh)",
             transition: "transform 1s cubic-bezier(0.82, 0.0, 0.28, 1.0)"
           }}>
-            <h6 className="landing__num">{this.state.count}</h6>
+            <h6 className="landing__num">Hello</h6>
             <h6 className="landing__desc" style={{
               opacity: this.state.phrase ? "1" : "0",
               transition: "opacity 2s ease-out"
-            }}>lines of code</h6>
+            }}>☻</h6>
           </div>
         </div>
         <div id="top" onScroll={event => this.handleScroll(event)}>
