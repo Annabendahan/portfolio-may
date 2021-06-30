@@ -140,7 +140,7 @@ class IndexPage extends Component {
                 <h5>
                   I am Anna Bendahan, a web designer & developer based in Paris. After learning to code in Barcelona,
                   I became a freelance developer. I worked for agencies, law-firms, music & podcast producers, and I am currently working for Veepee.
-            <br /> <br />
+                  <br /> <br />
 
                   <b>
                     {" "}
@@ -194,17 +194,17 @@ class IndexPage extends Component {
                 </svg>
                 <p>
                   I start with the <i>design</i>, which aims to be modern, intuitive &
-              responsive, then comes the <i>development</i> part (front & back) and{" "}
+                  responsive, then comes the <i>development</i> part (front & back) and{" "}
                   <i>integration</i>.
-            </p>
+                </p>
                 <p>
                   <b>
                     Figma, lllustrator
-                <br />
-                React.js, Vue.js
-                <br />
-                HTML, SCSS
-              </b>{" "}
+                    <br />
+                    React.js, Vue.js
+                    <br />
+                    HTML, SCSS
+                  </b>{" "}
                 </p>
               </div>
             </div>
@@ -229,7 +229,7 @@ class IndexPage extends Component {
                   <div className="project__right">
                     <p>
                       <b>Major Theory</b> - Music agency
-                  <br />
+                      <br />
                       <i>Web design & development</i>
                     </p>
                   </div>
@@ -273,7 +273,7 @@ class IndexPage extends Component {
             </a>
 
 
-            <a href="https://alicethonnier.netlify.app/" target="blank">
+            <a href="https://jgenerator.netlify.app/" target="blank">
               <div className="project">
                 <div className="project__content">
                   <div className="project__left">
@@ -281,9 +281,63 @@ class IndexPage extends Component {
                   </div>
                   <div className="project__right">
                     <p>
+                      <b>Jersey generator</b> - Perso
+
+                      <br />
+                      <i>Nodejs + gatsbyjs</i>
+                    </p>
+                  </div>
+                </div>
+                <svg
+                  className="thinline"
+                  width="100%"
+                  height="1"
+                  viewBox="0 0 2194 1"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line
+                    x1="2.18557e-08"
+                    y1="0.75"
+                    x2="2194"
+                    y2="0.750192"
+                    stroke="black"
+                    stroke-width="1"
+                  />
+                </svg>
+
+                <svg
+                  className="heavyline"
+                  width="100%"
+                  height="5"
+                  viewBox="0 0 2194 5"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line
+                    x1="2.18557e-07"
+                    y1="2.5"
+                    x2="2194"
+                    y2="2.50019"
+                    stroke="black"
+                    stroke-width="10"
+                  />
+                </svg>
+              </div>
+            </a>
+
+
+            <a href="https://alicethonnier.netlify.app/" target="blank">
+              <div className="project">
+                <div className="project__content">
+                  <div className="project__left">
+                    <h3>03</h3>
+                  </div>
+                  <div className="project__right">
+                    <p>
                       <b>Alice Thonnier</b> - Stylist
 
-                  <br />
+                      <br />
                       <i>Web design & development</i>
                     </p>
                   </div>
@@ -326,17 +380,17 @@ class IndexPage extends Component {
               </div>
             </a>
 
-            <a href="https://www.riot-esports.fr/" target="blank">
+            <a href="https://dantelennon.com/" target="blank">
               <div className="project">
                 <div className="project__content">
                   <div className="project__left">
-                    <h3>03</h3>
+                    <h3>04</h3>
                   </div>
                   <div className="project__right">
                     <p>
-                      <b>Riot e-sport</b>
+                      <b>Dante Lennon</b> - Producer
                       <br />
-                      <i>Front-end & integration</i>
+                      <i>Web design & development</i>
                     </p>
                   </div>
                 </div>
@@ -383,12 +437,12 @@ class IndexPage extends Component {
               <div className="project">
                 <div className="project__content">
                   <div className="project__left">
-                    <h3>04</h3>
+                    <h3>05</h3>
                   </div>
                   <div className="project__right">
                     <p>
                       <b>Quentin Mameri</b> - Lawyer
-                  <br />
+                      <br />
                       <i>Web design & development</i>
                     </p>
                   </div>
@@ -435,12 +489,12 @@ class IndexPage extends Component {
               <div className="project">
                 <div className="project__content">
                   <div className="project__left">
-                    <h3>05</h3>
+                    <h3>06</h3>
                   </div>
                   <div className="project__right">
                     <p>
                       <b>Rentman</b> - Software company
-                  <br />
+                      <br />
                       <i>Web & print design</i>
                     </p>
                   </div>
@@ -487,12 +541,12 @@ class IndexPage extends Component {
               <div className="project">
                 <div className="project__content">
                   <div className="project__left">
-                    <h3>06</h3>
+                    <h3>07</h3>
                   </div>
                   <div className="project__right">
                     <p>
                       <b>(Re)confinement</b> - Confinement radio
-                  <br />
+                      <br />
                       <i>Web design & development</i>
                     </p>
                   </div>
@@ -575,7 +629,7 @@ class IndexPage extends Component {
                 </svg>
                 <p>
                   Apart from coding, I play football <a href="https://www.instagram.com/usparisxifeminine/" target="blank"><u>@usparisxifeminine</u> </a> in Paris. By the way, we
-              are recruiting for next year,{" "}
+                  are recruiting for next year,{" "}
                   <b>
                     <a className="join" href="https://www.instagram.com/usparisxifeminine/" target="blank">join us !{" "}
                       <svg style={{
