@@ -203,6 +203,8 @@ class IndexPage extends Component {
                     <br />
                     React.js, Vue.js
                     <br />
+                    Node.js, Express
+                    <br />
                     HTML, SCSS
                   </b>{" "}
                 </p>
@@ -220,7 +222,7 @@ class IndexPage extends Component {
 
 
           <div className="projects">
-            <a href="https://majortheory.com/" target="blank">
+            <a href="https://www.lesateliersfc.fr/" target="blank">
               <div className="project">
                 <div className="project__content">
                   <div className="project__left">
@@ -228,9 +230,61 @@ class IndexPage extends Component {
                   </div>
                   <div className="project__right">
                     <p>
+                      <b>Les Ateliers FC</b> - Football club
+                      <br />
+                      <i> Web development + payment solution </i>
+                    </p>
+                  </div>
+                </div>
+                <svg
+                  className="thinline"
+                  width="100%"
+                  height="1"
+                  viewBox="0 0 3194 1"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line
+                    x1="2.18557e-08"
+                    y1="0.75"
+                    x2="3194"
+                    y2="0.750192"
+                    stroke="black"
+                    stroke-width="1"
+                  />
+                </svg>
+
+                <svg
+                  className="heavyline"
+                  width="100%"
+                  height="5"
+                  viewBox="0 0 3194 5"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line
+                    x1="2.18557e-07"
+                    y1="2.5"
+                    x2="3194"
+                    y2="2.50019"
+                    stroke="black"
+                    stroke-width="10"
+                  />
+                </svg>
+              </div>
+            </a>
+
+            <a href="https://majortheory.com/" target="blank">
+              <div className="project">
+                <div className="project__content">
+                  <div className="project__left">
+                    <h3>02</h3>
+                  </div>
+                  <div className="project__right">
+                    <p>
                       <b>Major Theory</b> - Music agency
                       <br />
-                      <i>Web design & development</i>
+                      <i>Web design + development</i>
                     </p>
                   </div>
                 </div>
@@ -277,7 +331,7 @@ class IndexPage extends Component {
               <div className="project">
                 <div className="project__content">
                   <div className="project__left">
-                    <h3>02</h3>
+                    <h3>03</h3>
                   </div>
                   <div className="project__right">
                     <p>
@@ -331,14 +385,14 @@ class IndexPage extends Component {
               <div className="project">
                 <div className="project__content">
                   <div className="project__left">
-                    <h3>03</h3>
+                    <h3>04</h3>
                   </div>
                   <div className="project__right">
                     <p>
                       <b>Alice Thonnier</b> - Stylist
 
                       <br />
-                      <i>Web design & development</i>
+                      <i>Web design + development</i>
                     </p>
                   </div>
                 </div>
@@ -384,13 +438,13 @@ class IndexPage extends Component {
               <div className="project">
                 <div className="project__content">
                   <div className="project__left">
-                    <h3>04</h3>
+                    <h3>05</h3>
                   </div>
                   <div className="project__right">
                     <p>
                       <b>Dante Lennon</b> - Producer
                       <br />
-                      <i>Web design & development</i>
+                      <i>Web design + development</i>
                     </p>
                   </div>
                 </div>
@@ -437,13 +491,13 @@ class IndexPage extends Component {
               <div className="project">
                 <div className="project__content">
                   <div className="project__left">
-                    <h3>05</h3>
+                    <h3>06</h3>
                   </div>
                   <div className="project__right">
                     <p>
                       <b>Quentin Mameri</b> - Lawyer
                       <br />
-                      <i>Web design & development</i>
+                      <i>Web design + development</i>
                     </p>
                   </div>
                 </div>
@@ -485,57 +539,7 @@ class IndexPage extends Component {
               </div>
             </a>
 
-            <a href="https://rentman.io/fr" target="blank">
-              <div className="project">
-                <div className="project__content">
-                  <div className="project__left">
-                    <h3>06</h3>
-                  </div>
-                  <div className="project__right">
-                    <p>
-                      <b>Rentman</b> - Software company
-                      <br />
-                      <i>Web & print design</i>
-                    </p>
-                  </div>
-                </div>
-                <svg
-                  className="thinline"
-                  width="100%"
-                  height="1"
-                  viewBox="0 0 3194 1"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <line
-                    x1="2.18557e-08"
-                    y1="0.75"
-                    x2="3194"
-                    y2="0.750192"
-                    stroke="black"
-                    stroke-width="1"
-                  />
-                </svg>
 
-                <svg
-                  className="heavyline"
-                  width="100%"
-                  height="5"
-                  viewBox="0 0 3194 5"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <line
-                    x1="2.18557e-07"
-                    y1="2.5"
-                    x2="3194"
-                    y2="2.50019"
-                    stroke="black"
-                    stroke-width="10"
-                  />
-                </svg>
-              </div>
-            </a>
 
             <a href="https://reconfinement.netlify.app/" target="blank">
               <div className="project">
@@ -547,7 +551,7 @@ class IndexPage extends Component {
                     <p>
                       <b>(Re)confinement</b> - Confinement radio
                       <br />
-                      <i>Web design & development</i>
+                      <i>Web design + development</i>
                     </p>
                   </div>
                 </div>
